@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 96%; /* Light Gray */
+    --foreground: 220 40% 10%; /* Dark Navy Blue */
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 220 40% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 40% 10%;
+    --primary: 220 100% 12%; /* Deep Navy Blue (#001F3F) */
+    --primary-foreground: 210 40% 98%; /* Light color for text on primary */
+    --secondary: 210 20% 93%; /* Lighter Gray variant */
+    --secondary-foreground: 220 40% 20%;
+    --muted: 210 20% 90%;
+    --muted-foreground: 220 20% 40%;
+    --accent: 180 100% 25%; /* Teal (#008080) */
+    --accent-foreground: 0 0% 100%; /* White text on accent */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 210 20% 85%;
+    --input: 210 20% 90%;
+    --ring: 180 100% 30%; /* Teal for focus rings */
+    --chart-1: 220 100% 12%;
+    --chart-2: 180 100% 25%;
+    --chart-3: 210 80% 50%;
+    --chart-4: 30 90% 55%;
+    --chart-5: 280 80% 60%;
+    --radius: 0.75rem;
+
+    /* Sidebar Light Theme - matching new futuristic theme */
+    --sidebar-background: 220 100% 10%; /* Darker Navy for sidebar */
+    --sidebar-foreground: 210 20% 85%; /* Light gray text */
+    --sidebar-primary: 180 100% 30%; /* Teal as primary in sidebar */
+    --sidebar-primary-foreground: 0 0% 100%; /* White text */
+    --sidebar-accent: 220 100% 15%; /* Slightly lighter navy for hover */
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 220 100% 20%;
+    --sidebar-ring: 180 100% 35%;
+  }
+
+  .dark {
+    --background: 225 20% 6%; /* Very Dark Navy Blue */
+    --foreground: 210 30% 90%; /* Off-white / Lightest Gray */
+    --card: 225 20% 10%; /* Darker Navy, slightly lighter than bg */
+    --card-foreground: 210 30% 90%;
+    --popover: 225 20% 8%;
+    --popover-foreground: 210 30% 90%;
+    --primary: 190 100% 45%; /* Brighter Cyan/Teal for dark mode primary */
+    --primary-foreground: 225 20% 10%; /* Dark text on bright primary */
+    --secondary: 225 15% 15%; /* Muted Dark Navy */
+    --secondary-foreground: 210 30% 80%;
+    --muted: 225 15% 20%;
+    --muted-foreground: 210 25% 60%;
+    --accent: 180 100% 35%; /* Vibrant Teal */
+    --accent-foreground: 0 0% 100%; /* White text on accent */
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 225 15% 25%;
+    --input: 225 15% 22%;
+    --ring: 180 100% 40%; /* Teal for focus rings */
+    --chart-1: 190 100% 45%;
+    --chart-2: 180 100% 35%;
+    --chart-3: 210 70% 60%;
+    --chart-4: 30 80% 65%;
+    --chart-5: 280 70% 70%;
+
+    /* Sidebar Dark Theme - matching new futuristic theme */
+    --sidebar-background: 225 25% 4%; /* Almost black navy */
+    --sidebar-foreground: 210 30% 75%;
+    --sidebar-primary: 180 100% 40%; /* Brighter Teal */
+    --sidebar-primary-foreground: 225 20% 5%;
+    --sidebar-accent: 225 20% 12%; /* Darker hover */
+    --sidebar-accent-foreground: 210 30% 95%;
+    --sidebar-border: 225 20% 15%;
+    --sidebar-ring: 180 100% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-geist-sans), sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+/* Custom futuristic scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background) / 0.5);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--accent) / 0.7);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--accent));
+}
+
+/* Futuristic selection style */
+::selection {
+  background-color: hsl(var(--accent));
+  color: hsl(var(--accent-foreground));
+}
+::-moz-selection {
+  background-color: hsl(var(--accent));
+  color: hsl(var(--accent-foreground));
+}
